@@ -11,8 +11,6 @@ export const createProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } = req.fields;
     const { photo } = req.files;
-
-    // validation
     switch (true) {
       case !name:
         return res.status(400).send({ error: "Name is required" });
@@ -145,8 +143,6 @@ export const updateProductController = async (req, res) => {
   try {
     const { name, description, price, category, quantity, shipping } = req.fields;
     const { photo } = req.files;
-
-    // validation
     switch (true) {
       case !name:
         return res.status(400).send({ error: "Name is required" });
@@ -275,8 +271,6 @@ export const searchProductController = async (req, res) => {
         ],
       })
       .select("-photo.data");
-
-    // Use full backend URL
     const API = process.env.BACKEND_URL || "http://localhost:5000";
 
     const resultsWithPhoto = results.map((p) => ({
