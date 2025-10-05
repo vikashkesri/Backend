@@ -21,10 +21,6 @@ import { requireSignIn, isAdmin } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-// BRAINTREE
-// router.get("/braintree/token", braintreeTokenController);
-// router.post("/braintree/payment", requireSignIn, brainTreePaymentController);
-
 // PRODUCT ROUTES
 router.post("/create-product", requireSignIn, isAdmin, formidable(), createProductController);
 router.put("/update-product/:pid", requireSignIn, isAdmin, formidable(), updateProductController);
