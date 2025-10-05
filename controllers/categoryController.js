@@ -37,7 +37,6 @@ export const createCategoryController = async (req, res) => {
   }
 };
 
-// ✅ Update category
 export const updateCategoryController = async (req, res) => {
   try {
     const { name } = req.body;
